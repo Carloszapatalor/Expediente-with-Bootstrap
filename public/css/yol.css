@@ -1,0 +1,5 @@
+.mi-imagen {
+    max-width:50px; /* Ajusta este valor según el tamaño del icono FontAwesome */
+    height: auto; /* Mantiene la relación de aspecto original de la imagen */
+}
+
