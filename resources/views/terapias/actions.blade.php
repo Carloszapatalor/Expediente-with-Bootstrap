@@ -1,8 +1,10 @@
-<a href="#" class='btn btn-primary btn-circle btn-sm open-edit-modal' data-target='#myModal'>
-    <i class='fas fa-pencil-alt'></i>
-</a>
+
+@include('terapias.edit', [
+        'id' => $id,
+        'therapy' => $therapy,
+        'description' => $description,
+        'price' => $price,
+
+])
 {{-- ELIMINAR --}}
-<a href="#" class='btn btn-danger btn-circle btn-sm'>
-    <i class='fas fa-trash'></i>
-</a>
 

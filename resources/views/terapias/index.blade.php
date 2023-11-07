@@ -27,26 +27,7 @@
                             <th>Opciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($terapias as $terapia)
-                            <tr>
-                                <td>{{ $terapia->id }}</td>
-                                <td>{{ $terapia->therapy }}</td>
-                                <td>{{ $terapia->description }}</td>
-                                <td>{{ $terapia->price }}</td>
-                                <td>
-                                    
-                                    
-
-                                    @include('terapias.edit',['terapia' => $terapia])
-
-                                    <a href="#" class='btn btn-danger btn-circle btn-sm'>
-                                        <i class='fas fa-trash'></i>
-                                    </a>
-                                </td>
-                        @endforeach
-
-                    </tbody>
+                   
                 </table>
             </div>
         </div>
@@ -71,6 +52,16 @@
             new DataTable('#terapias', {
                 responsive: true,
                 autoWidth: false,
+                "ajax":"{{route('datatable.terapias')}}",
+
+                "columns":[
+                    {data: 'id'},
+                    {data: 'therapy'},
+                    {data: 'description'},
+                    {data: 'price'},
+                    {data: 'btn'},
+
+                ],
                 "language": {
                     "lengthMenu": "Ver de _MENU_ ",
                     "zeroRecords": "No se encontraron registros",

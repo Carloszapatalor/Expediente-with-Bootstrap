@@ -1,6 +1,7 @@
 <div>
+   
     <a href="#" class="btn btn-primary btn-circle btn-sm abrir-modal" data-toggle="modal"
-        data-target=".bd-edit-modal-lg-{{ $id }}"><i class="fas fa-pencil-alt"></i></a>
+        data-target=".bd-edit-modal-lg-{{ $id }}"><i class='fas fa-trash'></i></a>
 
 
     <div class="modal fade bd-edit-modal-lg-{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="myEditForm"
