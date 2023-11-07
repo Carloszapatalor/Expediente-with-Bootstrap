@@ -30,6 +30,15 @@
             <i class="fas fa-fw fa-id-card"></i>
             <span>Citas</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('terapias.index')}}">
+            <i class="fas fa-hands-helping"></i>
+            <span>Terapias</span></a>
+    </li>
+
+
+   
     {{-- FIN DEL MENU DEL PACIENTE --}}
 
 </ul>

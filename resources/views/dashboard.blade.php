@@ -1,4 +1,5 @@
-<x-layout.app title="Inicio">
+<x-layout.header title="Inicio"/>
+<x-layout.app>
     <x-layout.heading title="" description=""/>
     <!-- Main page content-->
     <div class="container-xl px-4 mt-n10">

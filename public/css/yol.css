@@ -3,3 +3,7 @@
     height: auto; /* Mantiene la relación de aspecto original de la imagen */
 }
 
+#terapias_filter {
+    float: right;
+}
+

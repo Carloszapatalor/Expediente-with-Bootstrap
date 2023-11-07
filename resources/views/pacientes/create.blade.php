@@ -1,139 +1,91 @@
 <x-layout.header title="Citas" />
-<x-layout.app title="Citas">
+<x-layout.app>
     <x-layout.heading title="Tipos de Terapias" description="Selecciona el tipo de terapa para generar su cita" />
 
-    {{-- <main>
-        <div class="container-xl px-4">
-            <div class="row justify-content-center">
-                <!-- Create Organization-->
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11 mt-4">
-                    <div class="card text-center h-100">
-                        <div class="card-body px-5 pt-5 d-flex flex-column">
-                            <div>
-                                <div class="h3 text-primary">Individual Personal</div>
-                                <p class="text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facilis sint voluptas modi totam ex iste aliquid in, sapiente, quae hic commodi asperiores beatae a. Impedit labore repellendus rem voluptate.</p>
-                            </div>
-                            <div class="icons-org-create align-items-center mx-auto mt-auto">
-                                <i class="icon-users" data-feather="users"></i>
-                                <i class="icon-plus fas fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent px-5 py-4">
-                            <div class="small text-center"><a class="btn btn-block btn-primary" href="#">Solicitar</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Create Organization-->
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11 mt-4">
-                    <div class="card text-center h-100">
-                        <div class="card-body px-5 pt-5 d-flex flex-column">
-                            <div>
-                                <div class="h3 text-primary">Individual Infantil</div>
-                                <p class="text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus enim ea eligendi reprehenderit odio harum impedit odit id laboriosam dicta aut ullam animi error, deserunt rem voluptatum porro in modi.</p>
-                            </div>
-                            <div class="icons-org-create align-items-center mx-auto mt-auto">
-                                <i class="icon-users" data-feather="users"></i>
-                                <i class="icon-plus fas fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent px-5 py-4">
-                            <div class="small text-center"><a class="btn btn-block btn-primary" href="#">Solicitar</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Create Organization-->
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11 mt-4">
-                    <div class="card text-center h-100">
-                        <div class="card-body px-5 pt-5 d-flex flex-column">
-                            <div>
-                                <div class="h3 text-primary">Individual Adolecente</div>
-                                <p class="text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem explicabo, libero autem eos veritatis soluta maiores deserunt quaerat fugit itaque odio esse expedita dolorem molestias eius, fuga maxime doloremque. Enim.</p>
-                            </div>
-                            <div class="icons-org-create align-items-center mx-auto mt-auto">
-                                <i class="icon-users" data-feather="users"></i>
-                                <i class="icon-plus fas fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent px-5 py-4">
-                            <div class="small text-center"><a class="btn btn-block btn-primary" href="#">Solicitar</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Create Organization-->
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11 mt-4">
-                    <div class="card text-center h-100">
-                        <div class="card-body px-5 pt-5 d-flex flex-column">
-                            <div>
-                                <div class="h3 text-primary">Padres</div>
-                                <p class="text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsa nulla esse. Eius, libero porro sunt esse odit nam beatae, cum eveniet nemo temporibus voluptatum laudantium aliquam explicabo ut maiores.</p>
-                            </div>
-                            <div class="icons-org-create align-items-center mx-auto mt-auto">
-                                <i class="icon-users" data-feather="users"></i>
-                                <i class="icon-plus fas fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent px-5 py-4">
-                            <div class="small text-center"><a class="btn btn-block btn-primary" href="#">Solicitar</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Create Organization-->
-                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-11 mt-4">
-                    <div class="card text-center h-100">
-                        <div class="card-body px-5 pt-5 d-flex flex-column">
-                            <div>
-                                <div class="h3 text-primary">Parejas</div>
-                                <p class="text-muted mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus quasi fuga ab omnis asperiores sequi, vero alias, numquam quod optio, necessitatibus nesciunt tempora corporis nostrum incidunt. Facere placeat eos voluptates.</p>
-                            </div>
-                            <div class="icons-org-create align-items-center mx-auto mt-auto">
-                                <i class="icon-users" data-feather="users"></i>
-                                <i class="icon-plus fas fa-plus"></i>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent px-5 py-4">
-                            <div class="small text-center"><a class="btn btn-block btn-primary" href="#">Solicitar</a></div>
-                        </div>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-7">
+            <div class="card shadow mb-4">
               
-            </div>
-        </div>
-    </main> --}}
+                <div class="card-body">
+                    <label for="tipoCita">Seleccione el tipo de cita:</label>
+                    <select id="tipoCita" onchange="mostrarFormulario()">
+                        <option value="individual">Individual</option>
+                        <option value="tercero">Individual Infantil</option>
+                        <option value="pareja">Parejas</option>
+                        <option value="padres">Padres</option>
+                    </select>
 
-    <div class="pricing-columns">
-        <div class="row justify-content-center">
-            <!-- Pricing column 1-->
-            <div class="col-xl-4 col-lg-6 mb-4 mb-xl-2">
-                <div class="card h-100">
-                    <div class="card-header bg-transparent">
-                        <span class="badge bg-primary-soft text-primary rounded-pill py-2 px-3 mb-2">Individual</span>
-                    </div>
-                    <div class="card-body p-0">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item ">
-                                <i class="text-primary me-2" data-feather="check-circle"></i>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, placeat earum corporis veritatis deleniti hic atque provident est quisquam dolores necessitatibus ducimus non sunt culpa excepturi distinctio animi quos dolorum!
-                            </li>
-                           
-                        </ul>
-                    </div>
-                    <a class="card-footer d-flex align-items-center justify-content-between " href="#!">
-                        Get started!
-                        <i data-feather="arrow-right"></i>
-                    </a>
+                    <form id="formulario">
+                        <div id="datosPersona">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" value="{{ Auth::user()->name }}" id="nombre" required><br><br>
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" value="{{ Auth::user()->lastname }}" id="apellido" required><br><br>
+                            <label for="email">Correo:</label>
+                            <input type="email" value="{{ Auth::user()->email }}" id="email" required><br><br>
+                        </div>
+
+                        <div id="datosTercero" style="display:none;">
+                            <h3>Datos del Tercero</h3>
+                            <label for="nombreTercero">Nombre del Tercero:</label>
+                            <input type="text" id="nombreTercero" required><br><br>
+                            <label for="apellidoTercero">Apellido del Tercero:</label>
+                            <input type="text" id="apellidoTercero" required><br><br>
+                            <label for="edadTercero">Edad del Tercero:</label>
+                            <input type="number" id="edadTercero" required><br><br>
+
+                            <h3>Datos del Tutor</h3>
+                            <label for="nombreTutor">Nombre del Tutor:</label>
+                            <input type="text" id="nombreTutor" required><br><br>
+                            <label for="apellidoTutor">Apellido del Tutor:</label>
+                            <input type="text" id="apellidoTutor" required><br><br>
+                            <label for="edadTutor">Edad del Tutor:</label>
+                            <input type="number" id="edadTutor" required><br><br>
+                        </div>
+
+                        <div id="datosPareja" style="display:none;">
+                            <h3>Datos de la Pareja</h3>
+                            <label for="nombrePareja">Nombre de la Pareja:</label>
+                            <input type="text" id="nombrePareja" required><br><br>
+                            <label for="apellidoPareja">Apellido de la Pareja:</label>
+                            <input type="text" id="apellidoPareja" required><br><br>
+                            <label for="edadPareja">Edad de la Pareja:</label>
+                            <input type="number" id="edadPareja" required><br><br>
+                        </div>
+
+                        <input type="submit" value="Enviar">
+                    </form>
+
+                    <script>
+                        function mostrarFormulario() {
+                            var tipoCita = document.getElementById("tipoCita").value;
+                            var datosPersona = document.getElementById("datosPersona");
+                            var datosTercero = document.getElementById("datosTercero");
+                            var datosPareja = document.getElementById("datosPareja");
+
+                            if (tipoCita === "individual") {
+                                datosPersona.style.display = "block";
+                                datosTercero.style.display = "none";
+                                datosPareja.style.display = "none";
+                            } else if (tipoCita === "tercero") {
+                                datosPersona.style.display = "none";
+                                datosTercero.style.display = "block";
+                                datosPareja.style.display = "none";
+                            } else if (tipoCita === "pareja") {
+                                datosPersona.style.display = "none";
+                                datosTercero.style.display = "none";
+                                datosPareja.style.display = "block";
+                            } else {
+                                // Para el caso de padres
+                                // Puedes agregar aquí las lógicas necesarias si fuera necesario.
+                            }
+                        }
+                    </script>
                 </div>
-            </div>
-           
 
-            
-            
+            </div>
         </div>
     </div>
-    
-
-  
-
-  
 
 
 </x-layout.app>

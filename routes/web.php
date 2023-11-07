@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DatatableController;
+use App\Http\Controllers\TerapiaController;
+use App\Models\Terapia;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +26,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
         return view('pacientes.create');
     })->name('pacientes.citas');
 
-    
-  
+    Route::resource('terapias', TerapiaController::class)->names('terapias');
+
+    Route::get('datatables/terapias', [DatatableController::class,'terapias'])->name('datatable.terapias');
+        
 });

@@ -1,7 +1,5 @@
+<x-layout.header title="Seguridad"/>
 <x-layout.app>
-    <x-slot:title>
-        Perfil
-    </x-slot:title>
 
     <main>
         <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">

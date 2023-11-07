@@ -1,5 +1,5 @@
 <x-layout.header title="Citas" />
-<x-layout.app title="Inicio">
+<x-layout.app>
        <!-- Main page content-->
        <div class="container-xl px-4 mt-n10">
         <div class="row">
