@@ -1,38 +1,27 @@
 <div>
-   
-    <a href="#" class="btn btn-primary btn-circle btn-sm abrir-modal" data-toggle="modal"
-        data-target=".bd-edit-modal-lg-{{ $id }}"><i class='fas fa-trash'></i></a>
+    <a href="#" class="btn btn-danger btn-circle btn-sm abrir-modal" data-toggle="modal"
+        data-target=".bd-destroy-modal-lg-{{ $id }}"><i class='fas fa-trash'></i></a>
 
-
-    <div class="modal fade bd-edit-modal-lg-{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="myEditForm"
+    <div class="modal fade bd-destroy-modal-lg-{{ $id }}" id="destroyModal" tabindex="-1" role="dialog" aria-labelledby="myDestroyForm"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-0 card mb-4">
-                <div class="card-header">Editar de Terapias</div>
-                <form action="{{ route('terapias.update', ['terapia' => $id]) }}" method="POST">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">¿Estas segur@ de eliminar este registro?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <form method="POST" action="{{ route('terapias.destroy',['terapia' => $id]) }}) }}">
                     @csrf
-                    @method('PUT')
-                    <div class="card-body">
-                       
-                        <div class="mb-3">
-                            <label class="small mb-1" for="therapy">Nombre de la Terapia</label>
-                            <input class="form-control" name="therapy" id="therapy" type="text"
-                                value="{{ $therapy }}" required />
-                        </div>
-                        <div class="mb-3">
-                            <label class="small mb-1" for="description">Descripcion</label>
-                            <input class="form-control" name="description" id="description" type="text"
-                                value="{{ $description }}" />
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="small mb-1" for="price">Precio</label>
-                            <input class="form-control" name="price" type="number" id="precio" name="precio"
-                                step="0.01" min="0" value="{{ $price }}" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary ml-auto">Guardar</button>
-                    </div>
-                </form>
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                    </form>
+                </div>
+                
             </div>
         </div>
     </div>

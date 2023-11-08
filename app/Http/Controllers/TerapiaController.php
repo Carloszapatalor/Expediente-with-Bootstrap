@@ -21,7 +21,6 @@ class TerapiaController extends Controller
      */
     public function create()
     {
-       
     }
 
     /**
@@ -43,7 +42,6 @@ class TerapiaController extends Controller
      */
     public function show(Terapia $terapia)
     {
-       
     }
 
 
@@ -54,7 +52,6 @@ class TerapiaController extends Controller
     {
         $terapia = Terapia::find($id);
         return view('terapias.edit', compact('terapias'));
-       
     }
 
     /**
@@ -66,27 +63,27 @@ class TerapiaController extends Controller
             'therapy' => 'required',
             'price' => 'required',
         ]);
-    
+
         $terapia = Terapia::find($id);
-    
+
         if (!$terapia) {
-        
-           
         } else {
             $terapia->therapy = $request->input('therapy');
             $terapia->price = $request->input('price');
-            $terapia->save(); 
+            $terapia->save();
         }
-    
+
         return redirect()->route('terapias.index', ['terapia' => $terapia->id]);
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $terapia = Terapia::find($id);
+        $terapia->delete();
+        return redirect()->route('terapias.index')->with('success', 'Terapia eliminada exitosamente');
     }
 }
