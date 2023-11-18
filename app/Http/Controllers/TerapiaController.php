@@ -40,7 +40,7 @@ class TerapiaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Terapia $terapia)
+    public function show()
     {
     }
 
@@ -69,6 +69,7 @@ class TerapiaController extends Controller
         if (!$terapia) {
         } else {
             $terapia->therapy = $request->input('therapy');
+            $terapia->description = $request->input('description');
             $terapia->price = $request->input('price');
             $terapia->save();
         }

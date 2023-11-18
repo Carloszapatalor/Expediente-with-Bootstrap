@@ -12,7 +12,7 @@
                                     <h3 class="text-primary">Bienvenido {{Auth::user()->name}}!</h3>
                                     <p class="text-gray-700 mb-0">
                                         Reserva tu Terapia en el apartado "Citas" que se encuentra en el menú
-                                        o da click <a href="{{route('pacientes.citas')}}">aquí</a>
+                                        o da click <a href="{{route('citas.index')}}">aquí</a>
                                     </p>
                                 </div>
                             </div>

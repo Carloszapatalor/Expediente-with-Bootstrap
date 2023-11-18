@@ -7,3 +7,7 @@
     float: right;
 }
 
+.formularioOculto {
+    display: none;
+}
+

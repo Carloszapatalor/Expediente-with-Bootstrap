@@ -70,7 +70,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="{{ route('register') }}">Crear una Cuenta!</a>
+                                        <a class="small btn btn-success" href="{{ route('register') }}">Agendar Cita</a>
                                     </div>
                                 </div>
                             </div>

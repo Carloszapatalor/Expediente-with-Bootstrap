@@ -15,7 +15,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="{{route('pacientes.inicio')}}">
+        <a class="nav-link" href="{{route('dashboard')}}">
             <i class="fas fa-fw fa-home"></i>
             <span>Inicio</span></a>
     </li>
@@ -26,7 +26,7 @@
 
      <!-- Nav Item Citas  -->
      <li class="nav-item">
-        <a class="nav-link" href="{{route('pacientes.citas')}}">
+        <a class="nav-link" href="{{route('citas.index')}}">
             <i class="fas fa-fw fa-id-card"></i>
             <span>Citas</span></a>
     </li>
@@ -36,6 +36,18 @@
             <i class="fas fa-hands-helping"></i>
             <span>Terapias</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('modalidad.index')}}">
+            <i class="fas fa-calendar-check"></i>
+            <span>Modalidad</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('usuarios.index')}}">
+            <i class="fas fa-users"></i>
+            <span>Usuarios</span></a>
+    </li>
+
 
 
    
