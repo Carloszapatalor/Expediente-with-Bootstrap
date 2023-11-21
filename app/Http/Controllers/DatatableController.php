@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cita;
 use App\Models\Modalidad;
 use Illuminate\Http\Request;
 use App\Models\Terapia;
@@ -37,7 +38,7 @@ class DatatableController extends Controller
     }
 
     public function citas(){
-        $citas = Citas::all();
+        $citas = Cita::all();
         return datatables()
         ->collection($citas)
         ->addColumn('btn','citas.actions')
