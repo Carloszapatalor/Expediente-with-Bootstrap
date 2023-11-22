@@ -9,7 +9,7 @@ class Cita extends Model
 {
     use HasFactory;
 
-    public function estadoCitas()
+    public function estado()
     {
         return $this->belongsTo(Estado::class);
     }

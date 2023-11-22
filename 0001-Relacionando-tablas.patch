@@ -1,0 +1,334 @@
+From 8202409993ae6adf797a871f41f3c34c56a817a3 Mon Sep 17 00:00:00 2001
+From: Carlos Zapata <carloszapatalor@outlook.comm>
+Date: Tue, 21 Nov 2023 13:58:09 -0600
+Subject: [PATCH] Relacionando tablas
+
+---
+ app/Http/Controllers/CitaController.php       | 65 +++++++++++++++++++
+ app/Http/Controllers/DatatableController.php  |  3 +-
+ app/Http/Controllers/EstadoCitaController.php | 65 +++++++++++++++++++
+ app/Models/Cita.php                           | 21 ++++++
+ app/Models/EstadoCita.php                     | 16 +++++
+ app/Models/User.php                           |  6 ++
+ .../2023_11_18_180719_create_citas_table.php  | 35 ++++++++++
+ ...11_18_181123_create_estado_citas_table.php | 30 +++++++++
+ 8 files changed, 240 insertions(+), 1 deletion(-)
+ create mode 100644 app/Http/Controllers/CitaController.php
+ create mode 100644 app/Http/Controllers/EstadoCitaController.php
+ create mode 100644 app/Models/Cita.php
+ create mode 100644 app/Models/EstadoCita.php
+ create mode 100644 database/migrations/2023_11_18_180719_create_citas_table.php
+ create mode 100644 database/migrations/2023_11_18_181123_create_estado_citas_table.php
+
+diff --git a/app/Http/Controllers/CitaController.php b/app/Http/Controllers/CitaController.php
+new file mode 100644
+index 0000000..08324af
+--- /dev/null
++++ b/app/Http/Controllers/CitaController.php
+@@ -0,0 +1,65 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use App\Models\Cita;
++use Illuminate\Http\Request;
++
++class CitaController extends Controller
++{
++    /**
++     * Display a listing of the resource.
++     */
++    public function index()
++    {
++        //
++    }
++
++    /**
++     * Show the form for creating a new resource.
++     */
++    public function create()
++    {
++        //
++    }
++
++    /**
++     * Store a newly created resource in storage.
++     */
++    public function store(Request $request)
++    {
++        //
++    }
++
++    /**
++     * Display the specified resource.
++     */
++    public function show(Cita $cita)
++    {
++        //
++    }
++
++    /**
++     * Show the form for editing the specified resource.
++     */
++    public function edit(Cita $cita)
++    {
++        //
++    }
++
++    /**
++     * Update the specified resource in storage.
++     */
++    public function update(Request $request, Cita $cita)
++    {
++        //
++    }
++
++    /**
++     * Remove the specified resource from storage.
++     */
++    public function destroy(Cita $cita)
++    {
++        //
++    }
++}
+diff --git a/app/Http/Controllers/DatatableController.php b/app/Http/Controllers/DatatableController.php
+index 9a0acc8..12050bf 100644
+--- a/app/Http/Controllers/DatatableController.php
++++ b/app/Http/Controllers/DatatableController.php
+@@ -2,6 +2,7 @@
+ 
+ namespace App\Http\Controllers;
+ 
++use App\Models\Cita;
+ use App\Models\Modalidad;
+ use Illuminate\Http\Request;
+ use App\Models\Terapia;
+@@ -37,7 +38,7 @@ public function usuarios(){
+     }
+ 
+     public function citas(){
+-        $citas = Citas::all();
++        $citas = Cita::all();
+         return datatables()
+         ->collection($citas)
+         ->addColumn('btn','citas.actions')
+diff --git a/app/Http/Controllers/EstadoCitaController.php b/app/Http/Controllers/EstadoCitaController.php
+new file mode 100644
+index 0000000..fe2082d
+--- /dev/null
++++ b/app/Http/Controllers/EstadoCitaController.php
+@@ -0,0 +1,65 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use App\Models\EstadoCita;
++use Illuminate\Http\Request;
++
++class EstadoCitaController extends Controller
++{
++    /**
++     * Display a listing of the resource.
++     */
++    public function index()
++    {
++        //
++    }
++
++    /**
++     * Show the form for creating a new resource.
++     */
++    public function create()
++    {
++        //
++    }
++
++    /**
++     * Store a newly created resource in storage.
++     */
++    public function store(Request $request)
++    {
++        //
++    }
++
++    /**
++     * Display the specified resource.
++     */
++    public function show(EstadoCita $estadoCita)
++    {
++        //
++    }
++
++    /**
++     * Show the form for editing the specified resource.
++     */
++    public function edit(EstadoCita $estadoCita)
++    {
++        //
++    }
++
++    /**
++     * Update the specified resource in storage.
++     */
++    public function update(Request $request, EstadoCita $estadoCita)
++    {
++        //
++    }
++
++    /**
++     * Remove the specified resource from storage.
++     */
++    public function destroy(EstadoCita $estadoCita)
++    {
++        //
++    }
++}
+diff --git a/app/Models/Cita.php b/app/Models/Cita.php
+new file mode 100644
+index 0000000..ae5f448
+--- /dev/null
++++ b/app/Models/Cita.php
+@@ -0,0 +1,21 @@
++<?php
++
++namespace App\Models;
++
++use Illuminate\Database\Eloquent\Factories\HasFactory;
++use Illuminate\Database\Eloquent\Model;
++
++class Cita extends Model
++{
++    use HasFactory;
++
++    public function estadoCitas()
++    {
++        return $this->belongsTo(Estado::class);
++    }
++
++    public function users()
++    {
++        return $this->belongsTo(User::class);
++    }
++}
+\ No newline at end of file
+diff --git a/app/Models/EstadoCita.php b/app/Models/EstadoCita.php
+new file mode 100644
+index 0000000..f176297
+--- /dev/null
++++ b/app/Models/EstadoCita.php
+@@ -0,0 +1,16 @@
++<?php
++
++namespace App\Models;
++
++use Illuminate\Database\Eloquent\Factories\HasFactory;
++use Illuminate\Database\Eloquent\Model;
++
++class EstadoCita extends Model
++{
++    use HasFactory;
++
++    public function citas()
++    {
++        return $this->hasMany(Cita::class);
++    }
++}
+\ No newline at end of file
+diff --git a/app/Models/User.php b/app/Models/User.php
+index 4174f0a..38ff600 100644
+--- a/app/Models/User.php
++++ b/app/Models/User.php
+@@ -60,4 +60,10 @@ class User extends Authenticatable
+     protected $appends = [
+         'profile_photo_url',
+     ];
++    
++    public function citas() {
++        return $this->hasMany(Cita::class);
++    }
++
++    
+ }
+\ No newline at end of file
+diff --git a/database/migrations/2023_11_18_180719_create_citas_table.php b/database/migrations/2023_11_18_180719_create_citas_table.php
+new file mode 100644
+index 0000000..951a4f7
+--- /dev/null
++++ b/database/migrations/2023_11_18_180719_create_citas_table.php
+@@ -0,0 +1,35 @@
++<?php
++
++use Illuminate\Database\Migrations\Migration;
++use Illuminate\Database\Schema\Blueprint;
++use Illuminate\Support\Facades\Schema;
++
++return new class extends Migration
++{
++    /**
++     * Run the migrations.
++     */
++    public function up(): void
++    {
++        Schema::create('citas', function (Blueprint $table) {
++            $table->id();
++            $table->dataTime('fecha_inicio');
++            $table->dataTime('fecha_final');
++            $table->time('hora_inicio');
++            $table->time('hora_final');
++            $table->unsignedBigInteger('estado_id');
++            $table->unsignedBigInteger('user_id');
++            $table->foreign('estado_id')->references('id')->on('estado_citas');
++            $table->foreign('user_id')->references('id')->on('users');
++            $table->timestamps();
++        });
++    }
++
++    /**
++     * Reverse the migrations.
++     */
++    public function down(): void
++    {
++        Schema::dropIfExists('citas');
++    }
++};
+\ No newline at end of file
+diff --git a/database/migrations/2023_11_18_181123_create_estado_citas_table.php b/database/migrations/2023_11_18_181123_create_estado_citas_table.php
+new file mode 100644
+index 0000000..0c61d00
+--- /dev/null
++++ b/database/migrations/2023_11_18_181123_create_estado_citas_table.php
+@@ -0,0 +1,30 @@
++<?php
++
++use Illuminate\Database\Migrations\Migration;
++use Illuminate\Database\Schema\Blueprint;
++use Illuminate\Support\Facades\Schema;
++
++return new class extends Migration
++{
++    /**
++     * Run the migrations.
++     */
++    public function up(): void
++    {
++        Schema::create('estado_citas', function (Blueprint $table) {
++            $table->id();
++            $table->string('estado');
++            $table->dataTime('fecha');
++            $table->time('hora');
++            $table->timestamps();
++        });
++    }
++
++    /**
++     * Reverse the migrations.
++     */
++    public function down(): void
++    {
++        Schema::dropIfExists('estado_citas');
++    }
++};
+\ No newline at end of file
+-- 
+2.37.3.windows.1
+
