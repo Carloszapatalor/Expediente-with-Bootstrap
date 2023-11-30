@@ -35,7 +35,6 @@ class UserController extends Controller
         $datosUsuario = $request->only('name', 'lastname', 'email', 'password', 'password_confirmation');
         $createNewUser->create($datosUsuario);
         
-        
         return redirect()->route('usuarios.index');
     }
 

@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EstadoCita extends Model
+class Paciente extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        
+    ];
 
-    public function citas()
+    public function user()
     {
-        return $this->hasMany(Cita::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -15,7 +15,7 @@
                 <div class="modal-body">¿Estas segur@ de eliminar este registro?</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <form method="POST" action="{{ route('terapias.destroy',$id) }}) }}">
+                    <form method="POST" action="{{ route('terapias.destroy',['terapia' => $id]) }}) }}">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger" type="submit">Eliminar</button>

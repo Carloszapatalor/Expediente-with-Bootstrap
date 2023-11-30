@@ -29,14 +29,13 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        $enrollment = $this->generateMatricula($input);
+       
 
         $user = User::create([
             'name' => $input['name'],
             'lastname' => $input['lastname'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'enrollment' => $enrollment,
         ]);
 
         return $user;

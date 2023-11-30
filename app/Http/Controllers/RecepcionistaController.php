@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cita;
+use App\Models\Recepcionista;
 use Illuminate\Http\Request;
 
-class CitaController extends Controller
+class RecepcionistaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CitaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cita $cita)
+    public function show(Recepcionista $recepcionista)
     {
         //
     }
@@ -42,7 +42,7 @@ class CitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cita $cita)
+    public function edit(Recepcionista $recepcionista)
     {
         //
     }
@@ -50,7 +50,7 @@ class CitaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cita $cita)
+    public function update(Request $request, Recepcionista $recepcionista)
     {
         //
     }
@@ -58,7 +58,7 @@ class CitaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cita $cita)
+    public function destroy(Recepcionista $recepcionista)
     {
         //
     }

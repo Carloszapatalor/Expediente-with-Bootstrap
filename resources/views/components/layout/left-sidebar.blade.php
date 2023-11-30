@@ -28,7 +28,7 @@
      <li class="nav-item">
         <a class="nav-link" href="{{route('citas.index')}}">
             <i class="fas fa-fw fa-id-card"></i>
-            <span>Citas</span></a>
+            <span>Agendar Cita</span></a>
     </li>
 
     <li class="nav-item">
@@ -47,6 +47,15 @@
             <i class="fas fa-users"></i>
             <span>Usuarios</span></a>
     </li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('roles.index')}}">
+            <i class="fas fa-user-lock"></i>
+            <span>Roles</span></a>
+    </li>
+
+   
 
 
 

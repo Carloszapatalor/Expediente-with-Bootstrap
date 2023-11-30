@@ -1,8 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-// resources/scss/app.scss
+//resources/scss/app.scss
 @import "~bootstrap/scss/bootstrap";
+@import 'datatables.net-responsive-dt';
+
 
 [x-cloak] {
     display: none;

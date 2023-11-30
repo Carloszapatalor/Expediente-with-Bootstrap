@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estado_citas', function (Blueprint $table) {
+        Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
-            $table->string('estado');
-            $table->dataTime('fecha');
-            $table->time('hora');
             $table->timestamps();
+
+
+            // Atributo relacional a otra tabla
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estado_citas');
+        Schema::dropIfExists('pacientes');
     }
 };

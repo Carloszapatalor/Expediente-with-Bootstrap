@@ -1,5 +1,5 @@
 <div>
-    <a href="#" class="btn btn-danger btn-circle btn-sm abrir-modal" data-toggle="modal"
+    <a href="#" class="btn btn-danger btn-circle btn-sm abrir-modal ml-2" data-toggle="modal"
         data-target=".bd-destroy-modal-lg-{{ $id }}"><i class='fas fa-trash'></i></a>
 
     <div class="modal fade bd-destroy-modal-lg-{{ $id }}" id="destroyModal" tabindex="-1" role="dialog" aria-labelledby="myDestroyForm"

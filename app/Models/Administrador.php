@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cita extends Model
+class Administrador extends Model
 {
     use HasFactory;
 
-    public function estado()
-    {
-        return $this->belongsTo(Estado::class);
-    }
+    protected $fillable = [
+       
+    ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

@@ -6,6 +6,11 @@
         'email' => $email,
 
 ])
+
+{{-- ROLES --}}
+@include('usuarios.roles', ['id'=>$id])
+
+
 {{-- ELIMINAR --}}
 @include('usuarios.destroy', [
         'id' => $id

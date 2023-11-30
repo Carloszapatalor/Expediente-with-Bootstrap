@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EstadoCita;
+use App\Models\Terapeuta;
 use Illuminate\Http\Request;
 
-class EstadoCitaController extends Controller
+class TerapeutaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class EstadoCitaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(EstadoCita $estadoCita)
+    public function show(Terapeuta $terapeuta)
     {
         //
     }
@@ -42,7 +42,7 @@ class EstadoCitaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(EstadoCita $estadoCita)
+    public function edit(Terapeuta $terapeuta)
     {
         //
     }
@@ -50,7 +50,7 @@ class EstadoCitaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, EstadoCita $estadoCita)
+    public function update(Request $request, Terapeuta $terapeuta)
     {
         //
     }
@@ -58,7 +58,7 @@ class EstadoCitaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(EstadoCita $estadoCita)
+    public function destroy(Terapeuta $terapeuta)
     {
         //
     }

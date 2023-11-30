@@ -39,13 +39,13 @@
                         <br>
 
                         <!-- Form Group (username)-->
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <div class="col-span-6 sm:col-span-4 text:center">
                                 <x-label class="small mb-1" for="enrollment" value="{{ __('Matricula') }}" />
                                 <x-input class="form-control" id="enrollment" type="text"
                                     wire:model="state.enrollment" readonly />
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

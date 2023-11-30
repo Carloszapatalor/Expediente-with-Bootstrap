@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('citas', function (Blueprint $table) {
+        Schema::create('recepcionistas', function (Blueprint $table) {
             $table->id();
-            $table->dataTime('fecha_inicio');
-            $table->dataTime('fecha_final');
-            $table->time('hora_inicio');
-            $table->time('hora_final');
-            $table->unsignedBigInteger('estado_id');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('estado_id')->references('id')->on('estado_citas');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('matricula');
             $table->timestamps();
+
+            // Atributo relacional a otra tabla
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('citas');
+        Schema::dropIfExists('recepcionistas');
     }
 };

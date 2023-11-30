@@ -7,6 +7,9 @@ use App\Models\Modalidad;
 use Illuminate\Http\Request;
 use App\Models\Terapia;
 use App\Models\User;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Yajra\DataTables\DataTables;
 
 class DatatableController extends Controller
 {
@@ -37,13 +40,35 @@ class DatatableController extends Controller
         ->toJson(); 
     }
 
-    public function citas(){
-        $citas = Cita::all();
-        return datatables()
-        ->collection($citas)
-        ->addColumn('btn','citas.actions')
-        ->rawColumns (['btn'])
-        ->toJson();
+    // public function citas(){
+    //     $citas = Cita::all();
+    //     return datatables()
+    //     ->collection($citas)
+    //     ->addColumn('btn','citas.actions')
+    //     ->rawColumns (['btn'])
+    //     ->toJson();
+    // }
+
+    public function roles(){
+        $roles = Role::with('permissions')->get();
+        return DataTables::of($roles)
+             ->addColumn('btn', function ($role) {
+                return view('roles.actions', compact('role'));
+            })
+            ->rawColumns(['btn'])
+            ->toJson();
     }
+
+        // public function roles(){
+        //     $roles = Role::with('permissions')->get();
+        //     $dataTable = datatables()
+        //         ->collection($roles)
+        //         ->addColumn('btn','roles.actions')
+        //         ->rawColumns(['btn'])
+        //         ->toJson();
+        
+        //     return view('roles.actions', compact('dataTable'));
+        // }
+    
     
 }
